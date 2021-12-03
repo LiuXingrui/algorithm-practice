@@ -2,7 +2,6 @@ import math
 
 def max_subarray(list1):
     l=len(list1)
-    print(l)
     if l==1:
         return list1;
     else:
@@ -29,12 +28,12 @@ def max_mid_subarray(list1,mid):
     l=len(list1)
     left_maxindex=mid-1
     left_maxsum=-1000000
-    lef_sum=0
+    left_sum=0
     right_sum=0
     right_maxsum=-100000;
     right_index=mid
     right_maxindex=mid;
-    for i in range(mid-1,0):
+    for i in range(mid-1,0,-1):
         left_sum=left_sum+list1[i]
         if left_sum>left_maxsum :
             left_maxsum=left_sum
@@ -54,6 +53,6 @@ def max_mid_subarray(list1,mid):
 
 
 
-testlist=[1,-3,-5,9,11,13,-4,5]
+testlist=[1,-3,-5,9,11,13,-4,5,-70,9,100,3,-8,9,-11,4]
 result=max_subarray(testlist)
 print(result)
